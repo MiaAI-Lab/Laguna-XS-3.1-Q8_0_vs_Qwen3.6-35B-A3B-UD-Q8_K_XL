@@ -1,8 +1,8 @@
-# Laguna-XS-2.1 vs Qwen3.6-35B — Tool-Eval Bench Comparison
+# Laguna-XS-3.1 vs Qwen3.6-35B — Tool-Eval Bench Comparison
 
 Head-to-head comparison of two GGUF agent models on **[tool-eval-bench](https://github.com/SeraphimSerapis/tool-eval-bench) v2.0.6** — 84 tool-calling scenarios, 8 independent trials each, scored pass / partial / fail.
 
-**[View interactive report →](Laguna-XS-2.1-Q8_0_vs_Qwen3.6-35B-A3B-UD-Q8_K_XL.html)**
+**[View interactive report →](Laguna-XS-3.1-Q8_0_vs_Qwen3.6-35B-A3B-UD-Q8_K_XL.html)**
 
 ---
 
@@ -13,9 +13,9 @@ Both models were served via vLLM on `spark1` with thinking enabled:
 | | GGUF file | Quantization | vLLM model name |
 |---|---|---|---|
 | **Qwen3.6-35B** | `Qwen3.6-35B-A3B-UD-Q8_K_XL.gguf` | Unsloth Dynamic (**UD**), **Q8_K_XL** | `Qwen3.6-35B-A3B-UD-Q8_K_XL` |
-| **Laguna XS** | `Laguna-XS-2.1-Q8_0.gguf` | **Q8_0** | `Laguna-XS-2.1-Q8_0.gguf` |
+| **Laguna XS** | `Laguna-XS-3.1-Q8_0.gguf` | **Q8_0** | `Laguna-XS-3.1-Q8_0.gguf` |
 
-Qwen3.6-35B is a 35B-parameter MoE model; Laguna-XS-2.1 is a compact agent-focused model. Both were evaluated at high-quality GGUF quantizations suitable for local inference.
+Qwen3.6-35B is a 35B-parameter MoE model; Laguna-XS-3.1 is a compact agent-focused model. Both were evaluated at high-quality GGUF quantizations suitable for local inference.
 
 ---
 
@@ -23,7 +23,7 @@ Qwen3.6-35B is a 35B-parameter MoE model; Laguna-XS-2.1 is a compact agent-focus
 
 **Winner: Qwen3.6-35B-A3B-UD-Q8_K_XL** — +13 points overall, stronger hard-mode and multi-step performance, higher reliability floor, and better scores across most capability categories.
 
-| | Qwen3.6-35B-A3B-UD-Q8_K_XL | Laguna-XS-2.1-Q8_0.gguf |
+| | Qwen3.6-35B-A3B-UD-Q8_K_XL | Laguna-XS-3.1-Q8_0.gguf |
 |---|---|---|
 | **Mean score** | **91.0** ± 1.5 | 78.1 ± 0.4 |
 | **Mean points** | **153** / 168 | 131 / 168 |
@@ -75,7 +75,7 @@ Full per-trial data for the runner-up model is in [`laguna_xs_3.1_summery.md`](l
 | Field | Value |
 |---|---|
 | **Run ID** | `2026-07-03T16-06-58.763684Z_91909875` |
-| **Model path** | `/mnt/models/Laguna-XS-2.1/gguf/Laguna-XS-2.1-Q8_0.gguf` |
+| **Model path** | `/mnt/models/Laguna-XS-3.1/gguf/Laguna-XS-3.1-Q8_0.gguf` |
 | **tool-eval-bench** | v2.0.6 `dfb13b3` |
 | **Host** | `spark1` (Linux aarch64, Python 3.11.15) |
 | **Temperature** | 1.0 (`top_p=1.0`, thinking enabled) |
@@ -117,8 +117,8 @@ The summary file includes full per-scenario trial matrices. Key findings:
 
 | File | Description |
 |---|---|
-| [`Laguna-XS-2.1-Q8_0_vs_Qwen3.6-35B-A3B-UD-Q8_K_XL.html`](Laguna-XS-2.1-Q8_0_vs_Qwen3.6-35B-A3B-UD-Q8_K_XL.html) | Interactive head-to-head comparison report (open in browser) |
-| [`laguna_xs_3.1_summery.md`](laguna_xs_3.1_summery.md) | Cross-trial summary for Laguna-XS-2.1-Q8_0 — 8 trials, per-scenario results, category variance, failure analysis |
+| [`Laguna-XS-3.1-Q8_0_vs_Qwen3.6-35B-A3B-UD-Q8_K_XL.html`](Laguna-XS-3.1-Q8_0_vs_Qwen3.6-35B-A3B-UD-Q8_K_XL.html) | Interactive head-to-head comparison report (open in browser) |
+| [`laguna_xs_3.1_summery.md`](laguna_xs_3.1_summery.md) | Cross-trial summary for Laguna-XS-3.1-Q8_0 — 8 trials, per-scenario results, category variance, failure analysis |
 
 ---
 
@@ -141,10 +141,10 @@ Benchmark: **[tool-eval-bench](https://github.com/SeraphimSerapis/tool-eval-benc
 Clone this repo and open the HTML report:
 
 ```bash
-git clone https://github.com/MiaAI-Lab/Laguna-XS-2.1-Q8_0_vs_Qwen3.6-35B-A3B-UD-Q8_K_XL.git
-cd Laguna-XS-2.1-Q8_0_vs_Qwen3.6-35B-A3B-UD-Q8_K_XL
-xdg-open Laguna-XS-2.1-Q8_0_vs_Qwen3.6-35B-A3B-UD-Q8_K_XL.html   # Linux
-open Laguna-XS-2.1-Q8_0_vs_Qwen3.6-35B-A3B-UD-Q8_K_XL.html       # macOS
+git clone https://github.com/MiaAI-Lab/Laguna-XS-3.1-Q8_0_vs_Qwen3.6-35B-A3B-UD-Q8_K_XL.git
+cd Laguna-XS-3.1-Q8_0_vs_Qwen3.6-35B-A3B-UD-Q8_K_XL
+xdg-open Laguna-XS-3.1-Q8_0_vs_Qwen3.6-35B-A3B-UD-Q8_K_XL.html   # Linux
+open Laguna-XS-3.1-Q8_0_vs_Qwen3.6-35B-A3B-UD-Q8_K_XL.html       # macOS
 ```
 
 ### GitHub Pages
@@ -152,7 +152,7 @@ open Laguna-XS-2.1-Q8_0_vs_Qwen3.6-35B-A3B-UD-Q8_K_XL.html       # macOS
 To publish the report at a public URL, enable **GitHub Pages** on this repo (branch: `main`, folder: `/ (root)`). The comparison HTML will be served at:
 
 ```
-https://miaai-lab.github.io/Laguna-XS-2.1-Q8_0_vs_Qwen3.6-35B-A3B-UD-Q8_K_XL/Laguna-XS-2.1-Q8_0_vs_Qwen3.6-35B-A3B-UD-Q8_K_XL.html
+https://miaai-lab.github.io/Laguna-XS-3.1-Q8_0_vs_Qwen3.6-35B-A3B-UD-Q8_K_XL/Laguna-XS-3.1-Q8_0_vs_Qwen3.6-35B-A3B-UD-Q8_K_XL.html
 ```
 
 ---
@@ -162,7 +162,7 @@ https://miaai-lab.github.io/Laguna-XS-2.1-Q8_0_vs_Qwen3.6-35B-A3B-UD-Q8_K_XL/Lag
 | Model | Run period | Trials |
 |---|---|---|
 | `Qwen3.6-35B-A3B-UD-Q8_K_XL` | 2026-06-28 | 8 |
-| `Laguna-XS-2.1-Q8_0.gguf` | 2026-07-03 | 8 |
+| `Laguna-XS-3.1-Q8_0.gguf` | 2026-07-03 | 8 |
 
 ---
 
